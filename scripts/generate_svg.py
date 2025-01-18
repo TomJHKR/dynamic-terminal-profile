@@ -86,7 +86,7 @@ def generate_svg(data,size,commands_responses):
         </svg>
     </svg>
     """
-    with open("../assets/terminal.svg", "w") as file:
+    with open("assets/terminal.svg", "w") as file:
         file.write(template)
 
 def give_text_line(text, color, x, y_offset):
