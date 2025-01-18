@@ -2,6 +2,7 @@ name: Update SVG
 on:
   schedule:
     - cron: "0 0 * * *" # Daily at midnight
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,7 +21,7 @@ jobs:
           python scripts/generate_svg.py
       - name: Commit and push changes
         run: |
-          git config --local user.name "${{ vars.USER.EMAIL }}"
+          git config --local user.name "${{ vars.USER_EMAIL }}"
           git config --local user.email "${{ vars.USER_NAME }}"
           git add assets/terminal.svg
           git commit -m "Update terminal SVG"
