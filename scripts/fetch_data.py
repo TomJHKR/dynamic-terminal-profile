@@ -77,6 +77,6 @@ if __name__ == "__main__":
             "repository_stats" : data,
             "total_language_percentages": total_language_percentages
     }
-    with open("../data/stats.json", "w") as file:
+    with open("data/stats.json", "w") as file:
         json.dump(total_data, file)
 

@@ -110,7 +110,7 @@ def give_text_line(text, color, x, y_offset):
     """
 
 if __name__ == "__main__":
-    with open("../data/stats.json") as file:
+    with open("data/stats.json") as file:
         data = json.load(file)
 
     repo_stats = []
