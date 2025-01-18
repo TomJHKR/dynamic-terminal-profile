@@ -58,22 +58,22 @@
             </text>
     
             
-          <text x="135" y="25" font-size="14" fill="#FFFFFF">
+          <text x="130" y="25" font-size="14" fill="#FFFFFF">
             :
             </text>
     
             
-          <text x="144" y="25" font-size="14" fill="#3b8eea">
+          <text x="140" y="25" font-size="14" fill="#3b8eea">
             ~
             </text>
     
             
-          <text x="156" y="25" font-size="14" fill="#FFFFFF">
+          <text x="150" y="25" font-size="14" fill="#FFFFFF">
             $
             </text>
     
             
-          <text x="170" y="25" font-size="14" fill="#FFFFFF">
+          <text x="165" y="25" font-size="14" fill="#FFFFFF">
             whoami
             </text>
     
@@ -93,22 +93,22 @@
             </text>
     
             
-          <text x="135" y="100" font-size="14" fill="#FFFFFF">
+          <text x="130" y="100" font-size="14" fill="#FFFFFF">
             :
             </text>
     
             
-          <text x="144" y="100" font-size="14" fill="#3b8eea">
+          <text x="140" y="100" font-size="14" fill="#3b8eea">
             ~
             </text>
     
             
-          <text x="156" y="100" font-size="14" fill="#FFFFFF">
+          <text x="150" y="100" font-size="14" fill="#FFFFFF">
             $
             </text>
     
             
-          <text x="170" y="100" font-size="14" fill="#FFFFFF">
+          <text x="165" y="100" font-size="14" fill="#FFFFFF">
             ls projects/
             </text>
     
@@ -128,22 +128,22 @@
             </text>
     
             
-          <text x="135" y="175" font-size="14" fill="#FFFFFF">
+          <text x="130" y="175" font-size="14" fill="#FFFFFF">
             :
             </text>
     
             
-          <text x="144" y="175" font-size="14" fill="#3b8eea">
+          <text x="140" y="175" font-size="14" fill="#3b8eea">
             ~
             </text>
     
             
-          <text x="156" y="175" font-size="14" fill="#FFFFFF">
+          <text x="150" y="175" font-size="14" fill="#FFFFFF">
             $
             </text>
     
             
-          <text x="170" y="175" font-size="14" fill="#FFFFFF">
+          <text x="165" y="175" font-size="14" fill="#FFFFFF">
             ./most_used_languages.sh
             </text>
     
