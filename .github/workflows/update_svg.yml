@@ -21,6 +21,8 @@ jobs:
         run: mkdir -p assets
       - name: Generate SVG
         run: python scripts/generate_svg.py
+      - name: check directory
+        run: ls -l
       - name: Commit and push changes
         run: |
           git config --local user.name "${{ vars.USER_EMAIL }}"
