@@ -35,7 +35,7 @@ def calculate_language_percentages(languages):
     filtered_languages = {language: bytes for language, bytes in languages.items() if language not in config.EXCLUDED_LANGS}
     total_bytes = sum(filtered_languages.values())
     language_percentages = {
-        language: (bytes / total_bytes) * 100
+        language: round((bytes / total_bytes) * 100, 2)
         for language, bytes in filtered_languages.items()
     }
     return language_percentages
@@ -52,7 +52,7 @@ def calculate_total_language_percentages(all_repo_languages):
     
     # Calculate the overall percentage for each language
     total_language_percentages = {
-        language: (bytes / total_bytes) * 100
+        language: round((bytes / total_bytes) * 100, 2)
         for language, bytes in total_languages.items()
     }
     
@@ -62,13 +62,21 @@ if __name__ == "__main__":
     username = "TomJHKR"
     data = fetch_github_repositories(username)
     repos_stats = {}
+
     for repo in data["repos"]:
+        print(repo)
         languages = fetch_repository_languages(username, repo)
         # Calculate language percentages
         language_percentages = calculate_language_percentages(languages)
         repos_stats[repo] = language_percentages
-    print(calculate_total_language_percentages(repos_stats))
+    print(language_percentages)
+     # Calculate total language percentages across all repositories
+    total_language_percentages = calculate_total_language_percentages(repos_stats)
 
+    total_data = {
+            "repository_stats" : data,
+            "total_language_percentages": total_language_percentages
+    }
     with open("../data/stats.json", "w") as file:
-        json.dump(data, file)
+        json.dump(total_data, file)
 

@@ -69,7 +69,7 @@ def generate_svg(data,size,commands_responses):
         """
 
        # Add commands and responses dynamically
-    y_offset = 20  # Start below the static content
+    y_offset = 25  # Start below the static content
     for command, response in commands_responses:
         template += f"""
             {give_text_line('TomJHKR@github', '#23d18b', 20, y_offset)}
@@ -79,8 +79,7 @@ def generate_svg(data,size,commands_responses):
             {give_text_line(command, '#FFFFFF', 175, y_offset)}
             {give_text_line(response, '#FFFFFF', 20, y_offset + 20)}
         """
-        print(int(len(response) / 89))
-        y_offset += (int(len(response) / 89) + 2 ) * 20  # Add space for the next command-response pair
+        y_offset += (int(len(response) / 89) + 2 ) * 25  # Add space for the next command-response pair
 
     template += """
         
@@ -93,7 +92,6 @@ def generate_svg(data,size,commands_responses):
 def give_text_line(text, color, x, y_offset):
     splitted = [i for i in range(0, len(text), 89)]
     parts = [text[ind:ind + 89] for ind in splitted]
-    print(parts)
     if len(parts) > 1:
         added = ""
         for p in parts:
@@ -102,8 +100,7 @@ def give_text_line(text, color, x, y_offset):
             {p}
             </text>
             """
-            y_offset +=20
-        print(added)
+            y_offset +=25
         return added
     else:
         return f"""
@@ -115,30 +112,19 @@ def give_text_line(text, color, x, y_offset):
 if __name__ == "__main__":
     with open("../data/stats.json") as file:
         data = json.load(file)
-    print(data)
-    #chunked_data = [data["repos"][i:i+4] for i in range(0, len(data["repos"]), 4)]
-    #formatted_output = "<br />".join("  ".join(chunk) for chunk in chunked_data)
+
+    repo_stats = []
+    for i in data["repository_stats"]["repos"]:
+        repo_stats.append(i)
+
+    percent_stats = []
+    for key, value in sorted(data["total_language_percentages"].items(), key=lambda item: item[1], reverse=True):
+        percent_stats.append(f"{key}:{value}%")
+    
     commands_responses = [
-    ("repos", " ".join(data["repos"])),
-]
-#    commands_responses = [
-#    ("ls", "project1  project2  project3"),
-#    ("pwd", "/home/tomjkhr/projects"),
-#    ("cat readme.txt", "Welcome to my project!")
-#]
+    ("whoami", "I am a cybersecurity professional, that makes a variety of projects typically with a focus on security"),
+    ("ls projects/", " ".join(repo_stats)),
+    ("./most_used_languages.sh", " ".join(percent_stats))
+    ]
     generate_svg(data,800,commands_responses)
 
-
-    """
-                    <rect width="800" height="350" fill="#1e1e1e"/>
-        <text x="20" y="40" font-family="font-size="18" fill="#00FF00">Terminal</text>
-        <text x="20" y="80" font-family="font-size="14" fill="#FFFFFF">
-            Most Used Language: {data['language']}
-        </text>
-        <text x="20" y="120" font-family="font-size="14" fill="#FFFFFF">
-            Contributions: {data['contributions']}
-        </text>
-        <text x="20" y="160" font-family="font-size="14" fill="#00FF00">
-            Repositories: {data['repos']}
-        </text>
-        """
