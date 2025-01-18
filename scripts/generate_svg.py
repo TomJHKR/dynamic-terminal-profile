@@ -86,8 +86,10 @@ def generate_svg(data,size,commands_responses):
         </svg>
     </svg>
     """
+    print("Writing File")
     with open("assets/terminal.svg", "w") as file:
         file.write(template)
+        print("SVG written")
 
 def give_text_line(text, color, x, y_offset):
     splitted = [i for i in range(0, len(text), 89)]
