@@ -73,10 +73,10 @@ def generate_svg(data,size,commands_responses):
     for command, response in commands_responses:
         template += f"""
             {give_text_line('TomJHKR@github', '#23d18b', 20, y_offset)}
-            {give_text_line(':', '#FFFFFF', 140, y_offset)}
-            {give_text_line('~', '#3b8eea', 149, y_offset)}
-            {give_text_line('$', '#FFFFFF', 160, y_offset)}
-            {give_text_line(command, '#FFFFFF', 175, y_offset)}
+            {give_text_line(':', '#FFFFFF', 135, y_offset)}
+            {give_text_line('~', '#3b8eea', 144, y_offset)}
+            {give_text_line('$', '#FFFFFF', 156, y_offset)}
+            {give_text_line(command, '#FFFFFF', 170, y_offset)}
             {give_text_line(response, '#FFFFFF', 20, y_offset + 20)}
         """
         y_offset += (int(len(response) / 89) + 2 ) * 25  # Add space for the next command-response pair
