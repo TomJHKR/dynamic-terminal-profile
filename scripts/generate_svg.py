@@ -119,12 +119,12 @@ if __name__ == "__main__":
 
     percent_stats = []
     for key, value in sorted(data["total_language_percentages"].items(), key=lambda item: item[1], reverse=True):
-        percent_stats.append(f"{key}:{value}%")
+        percent_stats.append(f"{key} : {value}%")
     
     commands_responses = [
     ("whoami", "I am a cybersecurity professional, that makes a variety of projects typically with a focus on security"),
     ("ls projects/", " ".join(repo_stats)),
-    ("./most_used_languages.sh", " ".join(percent_stats))
+    ("./most_used_languages.sh", ", ".join(percent_stats))
     ]
     generate_svg(data,800,commands_responses)
 
