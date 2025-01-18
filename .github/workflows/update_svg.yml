@@ -23,7 +23,9 @@ jobs:
         run: |
           git config --local user.name "${{ vars.USER_EMAIL }}"
           git config --local user.email "${{ vars.USER_NAME }}"
+          git status
           git add assets/terminal.svg
+          git status
           git commit -m "Update terminal SVG"
           git push
 
