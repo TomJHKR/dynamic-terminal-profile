@@ -17,6 +17,8 @@ jobs:
         run: pip install requests
       - name: Fetch data 
         run: python scripts/fetch_data.py
+      - name: Ensure assets directory exists
+        run: mkdir -p assets
       - name: Generate SVG
         run: python scripts/generate_svg.py
       - name: Commit and push changes
